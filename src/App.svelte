@@ -1,30 +1,54 @@
 <script>
-	export let name;
+	let name
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<header class="main__header">
+		<img src="/logo.svg" alt="logo" class="logo">
+		<div class="text-container">
+			<h1>
+                <span class="text-container-main"> Hello, I am Armaan &#x1F366;</span>
+				<span class="text-container-sub">A fulstack webdev and an AI enthusiast.</span>
+			</h1>
+		</div>
+	</header>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+	.main__header {
+		background-image: linear-gradient(to right bottom, rgb(12, 5, 41), #212121);
+		height: 95vh;
+		clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+		color: white;
+		position: relative;
 	}
 
-	h1 {
-		color: #ff3e00;
+	.main__header .text-container {
 		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.text-container {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.text-container-main {
+		font-size: 30px;
+		display: block;
+		animation: animateTextMain 0.5s ease-out;
+	}
+	.text-container-sub {
+		font-size: 20px;
+		display: block;
+		animation: animateTextSub 0.5s ease-out;
+	}
+
+	.logo {
+		width: 66px;
+		position: absolute;
+		top: 30px;
+		left: 30px;
 	}
 </style>
